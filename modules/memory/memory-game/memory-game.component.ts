@@ -18,7 +18,8 @@ export class MemoryGameComponent implements OnInit {
   chosenImage:string;
   tile_width_small:boolean = false;
   tile_width_med:boolean = false;
-
+  resolution_web:boolean = false;
+  resolution_exhibit:boolean = false;
 
   constructor(private dataService: DataService, private webapp: WebappService, private memoryGameService: MemoryGameService) { }
 
@@ -61,7 +62,15 @@ export class MemoryGameComponent implements OnInit {
         this.memoryGameService.game.unmatchedPairs = this.tiles.length/2;
         this.memoryGameService.setData(this.data);
         this.calculateWidths();
+        this.determineResolution();
     }
+  }
+  determineResolution(){
+      if(this.memoryGameService.data.game.resolution == 'exhibit'){
+        this.resolution_exhibit = true;
+      } else if (this.memoryGameService.data.game.resolution == 'web'){
+          this.resolution_web = true;
+      }
   }
   calculateWidths(){
     //determine width of tile section

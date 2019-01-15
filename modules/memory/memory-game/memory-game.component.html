@@ -1,4 +1,4 @@
-<div class="row" >
+<div class="row"  [class.exhibit]="resolution_exhibit" [class.web]="resolution_web">
   <div class="column" [class.left]="data.game.showButtons || data.game.showPairsText || data.game.showScore  || data.game.showContent" [class.tile_width_small]="tile_width_small" [class.tile_width_med]="tile_width_med">
     <div *ngIf="tiles" class="gameBoard">
       <div memoryCard *ngFor="let tile of tiles" [tile]="tile" (click)="memoryGameService.flip(tile)" class="card" [class.flipped]="tile.flipped"></div>
