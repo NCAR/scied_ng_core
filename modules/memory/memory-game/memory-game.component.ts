@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../../services/data/data.service';
 import { WebappService } from '../../../services/webapp/webapp.service';
 import { MemoryGameService } from '../memory-game.service';
-import { MemoryCard } from '../../core/models/memory-game.model';
+import { MemoryCard } from '../../../models/memory-game.model';
 
 
 @Component({
