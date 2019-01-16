@@ -1,7 +1,12 @@
 /* app css stylesheet */
+.exhibit {
+  max-width:1920px;
+}
+.web {
+  max-width:1024px;
+}
 .memory-menu-container {
     width:80%;
-    margin: auto;
     padding-top: 15%;
 }
 
@@ -18,11 +23,15 @@
   }
 }
 
-.game_level_options button,
-.creditsButton {
-  display: block;
-  font-size: 24px;
-  margin: 0 10px 10px;
-  padding: 10px 20px;
-  width: 250px;
+.game_level_options {
+    margin-left: 50px;
+    button,
+    .creditsButton {
+        display: block;
+        font-size: 24px;
+        margin: 0 10px 10px;
+        padding: 10px 20px;
+        width: 250px;
+   }
+
 }

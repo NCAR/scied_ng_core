@@ -11,11 +11,21 @@ export class MemoryMenuComponent implements OnInit {
   creditstitle = "Credits and Acknowledgements";
   @Input() data:any;
   @Input() baseUrl:any;
+  resolution_web:boolean = false;
+  resolution_exhibit:boolean = true;
+
   constructor(private webapp: WebappService) { }
 
   ngOnInit() {
+    this.determineResolution();
   }
-
+  determineResolution(){
+    if(this.data.game.resolution == 'exhibit'){
+      this.resolution_exhibit = true;
+    } else if (this.data.game.resolution == 'web'){
+        this.resolution_web = true;
+    }
+  }
   toggleCreditsModal() {
       this.showCreditsModal = !this.showCreditsModal;
   }

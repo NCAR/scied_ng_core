@@ -1,4 +1,4 @@
-<mat-grid-list cols="4" rowHeight="100px" *ngIf="data" class="memory-menu-container">
+<mat-grid-list cols="4" rowHeight="100px" *ngIf="data" class="memory-menu-container" [class.exhibit]="resolution_exhibit" [class.web]="resolution_web">
   <mat-grid-tile colspan="3" rowspan="5">
     <div class="memory_introduction">
       <h2>{{data.game.text.introduction}}</h2>
