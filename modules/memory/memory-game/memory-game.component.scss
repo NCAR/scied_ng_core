@@ -53,6 +53,13 @@
   &.tile_width_med {
     width: 65%;
   }
+  &.tile_width_lg {
+      width: 77.5%;
+  }
+
+  &.tile_width_xlg {
+      width: 90.5%;
+  }
 
   /* for when there is a right sidebar */
   &.left {
@@ -62,6 +69,14 @@
 
     &.tile_width_med {
       width: 65%;
+    }
+
+    &.tile_width_lg {
+        width: 77.5%;
+    }
+
+    &.tile_width_xlg {
+        width: 90.5%;
     }
   }
 
@@ -79,6 +94,19 @@
 
     &.tile_width_med {
       width: 35%;
+    }
+    &.tile_width_lg {
+      width: 20.5%;
+      .menu {
+        .gameButton {
+            margin-right:0;
+        }
+      }
+    }
+
+    &.tile_width_xlg {
+      /* left column is too wide to support right column */
+      display:none;
     }
 
     &.content_two_rows {

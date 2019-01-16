@@ -16,8 +16,10 @@ export class MemoryGameComponent implements OnInit {
   @Input() level:any;
   tiles:any = [];
   chosenImage:string;
-  tile_width_small:boolean = false;
+  tile_width_xlg:boolean = false;
+  tile_width_lg:boolean = false;
   tile_width_med:boolean = false;
+  tile_width_small:boolean = false;
   resolution_web:boolean = false;
   resolution_exhibit:boolean = false;
 
@@ -74,10 +76,25 @@ export class MemoryGameComponent implements OnInit {
   }
   calculateWidths(){
     //determine width of tile section
-    if(this.memoryGameService.game.unmatchedPairs == 10){
+    console.log(this.memoryGameService.game.unmatchedPairs);
+    if(this.memoryGameService.game.unmatchedPairs == 14){
+      this.tile_width_xlg = true;
+      this.tile_width_lg = false;
+      this.tile_width_med = false;
+      this.tile_width_small = false;
+    } else if(this.memoryGameService.game.unmatchedPairs == 12){
+      this.tile_width_xlg = false;
+      this.tile_width_lg = true;
+      this.tile_width_med = false;
+      this.tile_width_small = false;
+    } else if(this.memoryGameService.game.unmatchedPairs == 10){
+      this.tile_width_xlg = false;
+      this.tile_width_lg = false;
       this.tile_width_med = true;
       this.tile_width_small = false;
     } else if(this.memoryGameService.game.unmatchedPairs <= 8){
+      this.tile_width_xlg = false;
+      this.tile_width_lg = false;
       this.tile_width_med = false;
       this.tile_width_small = true;
     } else {
