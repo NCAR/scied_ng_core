@@ -1,0 +1,42 @@
+h1 {
+  background: none;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 36px;
+  font-weight: bold;
+  height: 75px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.flex-container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  height: 990px;
+  justify-content: center;
+  margin:auto;
+
+  &.col2 {
+    width:1700px;
+  }
+  &.col4 {
+    width:1600px;
+  }
+}
+
+
+
+.flex-item {
+  align-self: center;
+  background-color: #454753;
+  height: 410px;
+  margin: 50px;
+  max-width: 50%;
+  width: 475px;
+}

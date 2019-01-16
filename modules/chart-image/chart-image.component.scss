@@ -1,0 +1,31 @@
+.axis_y {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    left: -150px;
+    position: absolute;
+    font-weight:normal;
+    top:400px;
+}
+.axis_x,
+.axis_y {
+    font-size: 1.75em;
+    color:#333;
+}
+
+.axis_x {
+    text-align: center;
+}
+.graph {
+    position: relative;
+    display: inline-block;
+   img{
+      margin-left:20px;
+  }
+}

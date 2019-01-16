@@ -1,0 +1,68 @@
+:host {
+  position: fixed;
+}
+
+.flex-container {
+  align-content: center;
+  align-items: stretch;
+  display: flex;
+  flex-flow: row wrap;
+  height: 990px;
+  justify-content: center;
+  margin:auto;
+
+}
+
+
+
+.menu, .player {
+  align-self: flex-start;
+  float:left;
+}
+.menu {
+  width:25%;
+  margin:20px;
+}
+.player {
+  width:70%;
+  margin:20px;
+}
+.active {
+  background-color:#4B88B6;
+  color:#fff;
+}
+
+div.menu {
+  display: flex;
+  flex-direction: column;
+
+  mat-card {
+    padding:15px;
+  }
+
+  h1 {
+    background-color: #396B9E;
+    border-top-right-radius: 20px;
+    color:#fff;
+    margin:0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 24px 16px 16px;
+  }
+  .mat-card-avatar {
+    height:80px;
+    width:80px;
+  }
+  .mat-card-header {
+    vertical-align:middle;
+
+    .mat-card-title{
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        margin: 20px 0px 0px 10px;
+    }
+  }
+
+}

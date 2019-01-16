@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MemoryGame, MemoryCard } from '../models/memory-game.model';
+import { MemoryGame, MemoryCard } from '../core/models/memory-game.model';
 
 @Injectable()
 export class MemoryGameService {

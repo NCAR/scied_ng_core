@@ -1,0 +1,22 @@
+<div class="video-player-single" *ngIf="item">
+  <vg-player>
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+
+    <vg-scrub-bar [vgSlider]="false">
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+
+    <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+        <vg-play-pause></vg-play-pause>
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+    </vg-controls>
+
+    <video [vgMedia]="media" #media id="videoItem" preload="auto" crossorigin [poster]="item.content.video.posterframe">
+        <source [src]="item.content.video?.file" type="video/mp4">
+    </video>
+</vg-player>
+</div>

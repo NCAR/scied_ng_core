@@ -1,0 +1,7 @@
+div.screensaver {
+  height:1080px;
+  width:1920px;
+  background-blend-mode: darken;
+  // blend mode optional at this stage; will be used more in the next demo.
+  transition: 3s;
+}

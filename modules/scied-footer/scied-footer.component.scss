@@ -1,0 +1,43 @@
+:host {
+
+      position: fixed;
+      bottom: 0;
+      width:100%;
+
+}
+mat-toolbar {
+  align-items: stretch;
+  height:90px;
+  padding:20px 60px;
+  justify-content: space-between;
+
+  &.row2first  {
+    button {
+
+    }
+    h1{
+      flex-basis:60%
+    }
+  }
+  &.row2last {
+    button {
+
+    }
+    h1{
+      flex-basis:60%;
+      text-align: right;
+    }
+  }
+  &.row1{
+    justify-content: space-evenly;
+  }
+
+  button {
+   font-size:20px;
+  }
+  h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    align-self: center;
+  }
+}

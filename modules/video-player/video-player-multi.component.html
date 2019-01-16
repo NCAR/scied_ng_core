@@ -1,0 +1,38 @@
+<div class="flex-container">
+    <div *ngIf="videos?.length > 0" class="menu">
+      <h1>Videos</h1>
+      <mat-card [class.active]="item.id == id" (click)="webapp.goToPage(item.content.url);" *ngFor="let item of videos">
+        <mat-card-header>
+          <img mat-card-avatar [src]="item.content.placeholder.image.thumb" [alt]="item.content.title">
+          <mat-card-title>{{item.content.title}}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+  </div>
+
+  <div class="player">
+    <div class="video-player-multi" *ngIf="item">
+      <div class="video">
+        <vg-player>
+          <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
+
+          <vg-scrub-bar [vgSlider]="false">
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+          </vg-scrub-bar>
+
+          <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+            <vg-play-pause></vg-play-pause>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+          </vg-controls>
+
+          <video [vgMedia]="media" #media id="videoItem" preload="auto" crossorigin [poster]="item.content.video?.posterframe" [src]="item.content.video?.file">
+          </video>
+        </vg-player>
+      </div>
+      <div class="desc" [innerHTML]="item.content.description"></div>
+    </div>
+  </div>
+</div>
