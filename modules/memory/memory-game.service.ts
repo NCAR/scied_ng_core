@@ -215,11 +215,11 @@ export class MemoryGameService {
       this.game.message = this.data.game.messages.won;
       this.game.showButtons = true;
 
-      if(this.data.game.messages.buttonTextQuit){
-        this.game.chooseLevelButtonText = this.data.game.messages.buttonTextQuit;
+      if(this.data.game.messages.buttonTextSelectLevel){
+        this.game.chooseLevelButtonText = this.data.game.messages.buttonTextSelectLevel;
       }
-      if(this.data.game.messages.buttonTextRestartLevel){
-        this.game.restartButtonText = this.data.game.messages.buttonTextRestartLevel;
+      if(this.data.game.messages.buttonTextRestartPlayAgain){
+        this.game.restartButtonText = this.data.game.messages.buttonTextPlayAgain;
       }
     }
   }
