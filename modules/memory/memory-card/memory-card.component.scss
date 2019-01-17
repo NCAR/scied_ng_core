@@ -20,6 +20,13 @@
 	img.front {
 		width: 245px;
 		height: 245px;
+
+		&.hide {
+			top:122px;
+			left:122px;
+			width: 0px;
+			height: 0px;
+		}
 	}
 }
 :host-context(.row.web) {
@@ -27,6 +34,13 @@
 	img.front {
 		width: 150px;
 		height: 150px;
+
+		&.hide {
+			top:75px;
+			left:75px;
+			width: 0px;
+			height: 0px;
+		}
 	}
 }
 /* flip speed goes here */
@@ -87,18 +101,14 @@
 
 .hide {
 	opacity: 0;
-	width:0;
-	height:0;
-	top: 122px;
-	left: 122px;
 	-webkit-transform: scale(0);
 	-moz-transform: scale(0);
 	-ms-transform: scale(0);
 	-o-transform: scale(0);
 	transform: scale(0);
-	-webkit-transition: all 3s ease-out;
-	-moz-transition: all 3s ease-out;
-	-ms-transition: all 3s ease-out;
-	-o-transition: all 3s ease-out;
-	transition: all 3s ease-out;
+	-webkit-transition: all 13s ease-out;
+	-moz-transition: all 13s ease-out;
+	-ms-transition: all 13s ease-out;
+	-o-transition: all 13s ease-out;
+	transition: all 13s ease-out;
 }
