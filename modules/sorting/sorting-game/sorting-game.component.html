@@ -1,0 +1,98 @@
+<div class="container" *ngIf="data">
+  <div class="column left">
+
+    <button class="creditsButton" mat-raised-button draggable="false" onmousedown="return false" (click)="toggleCreditsModal()" *ngIf="data.game.credits">Credits</button>
+  </div>
+  <div class="column middle">middle</div>
+  <div class="column right">
+    <h1>{{data.levels[level].title}}</h1>
+    <div class="response">
+      <h2 id="response_title">{{data.levels[level].directions.heading }}</h2>
+      <p id="response_body">{{data.levels[level].directions.description }}</p>
+    </div>
+    <p class="directions_subtext">{{data.levels[level].directions.SUBTEXT}}</p>
+
+    <p class="score">Your Score = {{game.score}}</p>
+    <div class="progress">
+      <div class="progress_label">
+      Your Progress:
+      </div>
+      <div class="progress_meter_container">
+        <div class="progress_labels">
+          <div *ngFor="let item of data.levels | keyvalue">
+            {{item.value.buttonTitle}}
+          </div>
+        </div>
+        <div class="meter">
+          <span [ngStyle]="{width: game.progressPercent}"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="levelbuttons">
+      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (click)="webapp.goToPage(baseUrl+item.key)">{{item.value.buttonTitle}}</button>
+    </div>
+  </div>
+  <audio id="{{item.value.id}}" preload="auto" *ngFor="let item of data.audio | keyvalue">
+      <source [src]="item.value.src" [type]="item.value.type">
+  </audio>
+</div>
+
+<!--//div class="container-fluid" id="{{dd.level}}">
+        <div class="row">
+            <div ng-repeat="(key, content) in dd.data track by key">
+                <div class="col-xs-{{dd.dragdrop_cols1}}" *ngIf="key =='draggables'">
+                    <ul id="draggables">
+                        <li class="{{single_data[dd.level].correctDiv}} item" id="{{single_data.id}}" ng-repeat="single_data in dd.shuffle(content)" *ngIf="single_data[dd.level]" data-drag="true" data-jqyoui-options="{revert:'invalid'}" jqyoui-draggable="{animate:true,onStart:'dd.startDrag'}">
+                            <div class="header">
+                                <h4>{{single_data.title}}</h4>
+                                <img [src]="{{single_data.image}}" alt="{{single_data.title}}" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-{{dd.dragdrop_cols2}}" *ngIf="key == 'dropzones'">
+                    <div id="dropzones" *ngIf="levelname == dd.level" ng-repeat="(levelname, dropzone) in content">
+                        <div class="dropzone {{zone.classname}}" ng-repeat="zone in dropzone">
+                            <div class="header">
+                                <h4>{{zone.title}} <span class="dropzone_description">{{zone.description}}</span></h4>
+                            </div>
+                            <ul class="bin" id="{{zone.id}}" data-drop="true" data-jqyoui-options data-jqyoui-options jqyoui-droppable="{beforeDrop:'dd.handleDrop'}" style="width:{{zone.width}}px;height:{{zone.height}}px;"></ul>
+                        </div>
+                    </div>
+
+                </div>
+
+        <button id="creditsButton" draggable="false" onmousedown="return false" (click)="dd.toggleCreditsModal()" *ngIf="dd.data.game.popups != true && dd.data.game.credits">Credits</button>
+    </div//-->
+
+
+<!--//scied-modal visible="dd.showModal" modaltitle="dd.modal.title">
+        <div ng-bind-html="dd.modal.text | unsafe"></div>
+        <button class="md-raised md-cornered closeBtn" (click)="dd.closeModal();">Close</button>
+    </scied-modal//-->
+<!--//scied-modal visible="dd.showChooseLevelModal" modaltitle="modal.title" *ngIf="dd.data.game.popups == true">
+        <label for="id">Choose a Level</label>
+         <select id="levelchooser" ng-change="dd.changeLevel();" ng-model="dd.level">
+             <option value="{{levelname}}" ng-repeat="(levelname, leveldata) in dd.data.levels" >{{leveldata.buttonTitle}}</option>
+        </select>
+    </scied-modal//-->
+<!--//scied-modal visible="dd.showCompleteModal" modaltitle="dd.dragDropModalTitle" class="dd.dragDropModalClass">
+        <p>Your score is {{dd.score}} points.</p>
+        <button (click)="dd.nextLevel()" *ngIf="dd.level != dd.last_level" id="nextButton">Next Level</button>
+        <button (click)="dd.restartGame()" *ngIf="dd.level == dd.last_level" id="restartButton">Restart Game</button>
+    </scied-modal//-->
+
+
+<!--//scied-modal *ngIf="game" [visible]="showCompleteModal" [modaltitle]="game.sortingModalTitle" [closable]="closable" (visibleChange)="onVisibleChange($event)">
+  <p>Your score is {{game.score}} points.</p>
+  <button (click)="nextLevel()" *ngIf="game.level != game.last_level" id="nextButton">Next Level</button>
+  <button (click)="restartGame()" *ngIf="game.level == game.last_level" id="restartButton">Restart Game</button>
+  <button mat-raised-button color="primary" (click)="closeModal();" class="closeBtn">Close</button>
+</scied-modal//-->
+
+
+<scied-modal *ngIf="data" [visible]="showModal" [modaltitle]="modal.title" [closable]="closable" (visibleChange)="onVisibleChange($event)">
+  <div [innerHTML]="modal.body"></div>
+  <button mat-raised-button color="primary" (click)="closeModal();" class="closeBtn">Close</button>
+</scied-modal>

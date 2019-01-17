@@ -1,0 +1,112 @@
+button {
+  width:150px;
+  font-size: 18px;
+  padding:10px;
+  border-color: #044062;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 20px;
+}
+
+.column {
+  width: 33%;
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  &.left {
+
+    .creditsButton {
+      position:relative;
+      bottom:20px;
+    }
+
+
+  }
+
+  &.middle {
+    flex-grow: 1;
+  }
+
+  &.right {
+    .response {
+      border: 2px inset black;
+      font-size: 24px;
+      min-height: 400px;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .score {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .progress {
+      display: flex;
+      flex-direction: row;
+      .progress_label {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 55px;
+        padding-right: 10px;
+      }
+
+      .progress_meter_container {
+        flex-grow: 1;
+
+        .progress_labels {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+
+          div {
+            flex-grow: 1;
+            padding: 10px 30px;
+            font-weight: bold;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .meter {
+      background: #555 none repeat scroll 0 0;
+      border-radius: 25px;
+      box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
+      height: 35px;
+      padding: 10px;
+      position: relative;
+
+      span {
+        background-color: rgb(43, 194, 83);
+        background-image: -moz-linear-gradient(center bottom , rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
+        border-radius: 20px 8px 8px 20px;
+        box-shadow: 0 2px 9px rgba(255, 255, 255, 0.3) inset, 0 -2px 6px rgba(0, 0, 0, 0.4) inset;
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 35px;
+      }
+    }
+
+    .levelbuttons {
+      display:flex;
+      justify-content: space-between;
+      margin-top:50px;
+
+      button {
+        &.active {
+          background-color: #396b9e;
+          color: #fff;
+          text-shadow: 0 1px 1px #194b7e;
+        }
+      }
+    }
+  }
+}
