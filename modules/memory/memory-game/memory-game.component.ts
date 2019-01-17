@@ -76,7 +76,6 @@ export class MemoryGameComponent implements OnInit {
   }
   calculateWidths(){
     //determine width of tile section
-    console.log(this.memoryGameService.game.unmatchedPairs);
     if(this.memoryGameService.game.unmatchedPairs >= 14){
       this.tile_width_xlg = true;
       this.tile_width_lg = false;
