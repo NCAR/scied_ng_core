@@ -15,10 +15,19 @@
 	transform: rotateY(180deg);
 }
 
-.back,
-.front {
-	width: 245px;
-	height: 245px;
+:host-context(.row.exhibit) {
+	img.back,
+	img.front {
+		width: 245px;
+		height: 245px;
+	}
+}
+:host-context(.row.web) {
+	img.back,
+	img.front {
+		width: 150px;
+		height: 150px;
+	}
 }
 /* flip speed goes here */
 .flipper {

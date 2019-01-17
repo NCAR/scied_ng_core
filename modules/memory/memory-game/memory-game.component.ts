@@ -76,7 +76,8 @@ export class MemoryGameComponent implements OnInit {
   }
   calculateWidths(){
     //determine width of tile section
-    if(this.memoryGameService.game.unmatchedPairs == 14){
+    console.log(this.memoryGameService.game.unmatchedPairs);
+    if(this.memoryGameService.game.unmatchedPairs >= 14){
       this.tile_width_xlg = true;
       this.tile_width_lg = false;
       this.tile_width_med = false;
@@ -97,9 +98,11 @@ export class MemoryGameComponent implements OnInit {
       this.tile_width_med = false;
       this.tile_width_small = true;
     } else {
-      // greater than 10 so just do full length
+      // greater than 14 so just do full length
         this.tile_width_med = false;
         this.tile_width_small = false;
+        this.tile_width_lg = false;
+        this.tile_width_xlg = false;
     }
   }
   retrieveMatchTitle(id){
