@@ -15,7 +15,7 @@ export class VideoPlayerMultiComponent implements OnInit {
   subscription: ISubscription;
   item:any;
 
-  constructor(private router: Router, private route: ActivatedRoute, private webapp: WebappService) {
+  constructor(private router: Router, private route: ActivatedRoute, public webapp: WebappService) {
 
   }
 

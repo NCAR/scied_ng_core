@@ -24,7 +24,7 @@ export class SortingGameComponent implements OnInit {
   };
   showModal:boolean = false;
 
-  constructor(private dataService: DataService, private webapp: WebappService, private sortingGameService: SortingGameService) { }
+  constructor(private dataService: DataService, public webapp: WebappService, private sortingGameService: SortingGameService) { }
 
   ngOnInit(){}
   ngOnChanges(){

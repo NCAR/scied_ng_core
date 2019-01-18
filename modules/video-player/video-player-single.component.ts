@@ -9,7 +9,7 @@ import { WebappService } from '../../services/webapp/webapp.service';
 export class VideoPlayerSingleComponent implements OnInit {
   @Input() item:any;
 
-  constructor(private webapp: WebappService) {   }
+  constructor(public webapp: WebappService) {   }
 
 
 

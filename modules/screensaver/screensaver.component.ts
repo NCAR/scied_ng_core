@@ -14,7 +14,7 @@ export class ScreensaverComponent implements OnInit, OnDestroy {
   chosenImgIndex:number = 0;
   totalImgs:number = 0;
   imgList:any;
-  constructor(private outlet: RouterOutlet, private webapp: WebappService) {
+  constructor(private outlet: RouterOutlet, public webapp: WebappService) {
     this.imgList = outlet.activatedRouteData['images']
     this.totalImgs = this.imgList.length;
   }

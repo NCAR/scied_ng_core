@@ -3,6 +3,7 @@ button {
   font-size: 18px;
   padding:10px;
   border-color: #044062;
+  background-color: #efefef;
 }
 
 .container {
@@ -21,8 +22,8 @@ button {
   &.left {
 
     .creditsButton {
-      position:relative;
-      bottom:20px;
+      position:absolute;
+      bottom:250px;
     }
 
 

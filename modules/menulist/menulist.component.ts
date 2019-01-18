@@ -11,7 +11,7 @@ export class MenulistComponent implements OnInit {
   @Input() itemClass:string = '';
   customClass:any;
 
-  constructor(private webapp: WebappService) { }
+  constructor(public webapp: WebappService) { }
 
   ngOnInit() {
   }

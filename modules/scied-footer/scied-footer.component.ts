@@ -7,7 +7,7 @@ import { WebappService } from '../../services/webapp/webapp.service';
   styleUrls: ['./scied-footer.component.scss']
 })
 export class SciedFooterComponent implements OnInit {
-  constructor(private webapp: WebappService) { }
+  constructor(public webapp: WebappService) { }
 
   ngOnInit() {
   }

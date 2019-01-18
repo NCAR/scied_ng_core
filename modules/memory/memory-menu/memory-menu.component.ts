@@ -14,7 +14,7 @@ export class MemoryMenuComponent implements OnInit {
   resolution_web:boolean = false;
   resolution_exhibit:boolean = true;
 
-  constructor(private webapp: WebappService) { }
+  constructor(public webapp: WebappService) { }
 
   ngOnInit() {
     this.determineResolution();

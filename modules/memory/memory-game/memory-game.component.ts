@@ -23,7 +23,7 @@ export class MemoryGameComponent implements OnInit {
   resolution_web:boolean = false;
   resolution_exhibit:boolean = false;
 
-  constructor(private dataService: DataService, private webapp: WebappService, private memoryGameService: MemoryGameService) { }
+  constructor(private dataService: DataService, public webapp: WebappService, private memoryGameService: MemoryGameService) { }
 
   ngOnInit(){}
   ngOnChanges(){
