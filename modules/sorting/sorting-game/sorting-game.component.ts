@@ -61,12 +61,13 @@ export class SortingGameComponent implements OnInit {
     this.dropZones = dropList.toString();
   }
   drop(event: CdkDragDrop<string[]>) {
-    console.log(event);
     let item_class = event.item.element.nativeElement.classList;
     let bin_id = event.container.element.nativeElement.id;
 
     if (!item_class.contains(bin_id)) {
       return;
+    } else if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       console.log('in');
       transferArrayItem(event.previousContainer.data,
