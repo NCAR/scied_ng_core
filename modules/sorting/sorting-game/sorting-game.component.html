@@ -1,9 +1,43 @@
-<div class="container" *ngIf="data">
+<div class="container" [ngClass]="level" *ngIf="data" cdkDropListGroup>
   <div class="column left">
+    <div cdkDropList [cdkDropListData]="sortingGameService.tiles" class="bin draggables" (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate" [cdkDropListConnectedTo]>
+      <div [ngClass]="tile[level].correctDiv" class="item" [id]="tile.id" *ngFor="let tile of sortingGameService.tiles" cdkDrag>
+        <div class="header">
+          <h4>{{tile.title}}</h4>
+          <img [src]="tile.image" [alt]="tile.title" />
+          <div *cdkDragPlaceholder></div>
+          <div class="item" *cdkDragPreview>
+            <div class="header">
+              <h4>{{tile.title}}</h4>
+              <img [src]="tile.image" [alt]="tile.title" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <button class="creditsButton" mat-raised-button draggable="false" onmousedown="return false" (click)="toggleCreditsModal()" *ngIf="data.game.credits">Credits</button>
   </div>
-  <div class="column middle">middle</div>
+  <div class="column middle">
+    <div class="dropzones" *ngFor="let zone of data.dropzones[level] | keyvalue">
+      <div class="dropzone" [ngClass]="zone.value.classname">
+        <div class="header">
+          <h4>{{zone.value.title}} <span class="dropzone_description">{{zone.value.description}}</span></h4>
+        </div>
+        <div class="bin droppables" [id]="zone.value.id" cdkDropList [cdkDropListData]="dropBins[zone.value.id]" [ngClass]="zone.value.classname" (cdkDropListDropped)="drop($event)">
+
+          <div class="item dropped" *ngFor="let item of dropBins[zone.value.id]" cdkDrag>
+            <div class="header">
+              <h4>{{item.title}}</h4>
+              <div><img [src]="item.image" /></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
   <div class="column right">
     <h1>{{data.levels[level].title}}</h1>
     <div class="response">
@@ -12,10 +46,10 @@
     </div>
     <p class="directions_subtext">{{data.levels[level].directions.SUBTEXT}}</p>
 
-    <p class="score">Your Score = {{game.score}}</p>
+    <p class="score">Your Score = {{sortingGameService.score}}</p>
     <div class="progress">
       <div class="progress_label">
-      Your Progress:
+        Your Progress:
       </div>
       <div class="progress_meter_container">
         <div class="progress_labels">
@@ -24,47 +58,19 @@
           </div>
         </div>
         <div class="meter">
-          <span [ngStyle]="{width: game.progressPercent}"></span>
+          <span [ngStyle]="{width: sortingGameService.game.progressPercent}"></span>
         </div>
       </div>
     </div>
 
     <div class="levelbuttons">
-      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (click)="webapp.goToPage(baseUrl+item.key)">{{item.value.buttonTitle}}</button>
+      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (click)="webapp.goToPage(baseUrl+'/'+item.key)">{{item.value.buttonTitle}}</button>
     </div>
   </div>
   <audio id="{{item.value.id}}" preload="auto" *ngFor="let item of data.audio | keyvalue">
-      <source [src]="item.value.src" [type]="item.value.type">
+    <source [src]="item.value.src" [type]="item.value.type">
   </audio>
 </div>
-
-<!--//div class="container-fluid" id="{{dd.level}}">
-        <div class="row">
-            <div ng-repeat="(key, content) in dd.data track by key">
-                <div class="col-xs-{{dd.dragdrop_cols1}}" *ngIf="key =='draggables'">
-                    <ul id="draggables">
-                        <li class="{{single_data[dd.level].correctDiv}} item" id="{{single_data.id}}" ng-repeat="single_data in dd.shuffle(content)" *ngIf="single_data[dd.level]" data-drag="true" data-jqyoui-options="{revert:'invalid'}" jqyoui-draggable="{animate:true,onStart:'dd.startDrag'}">
-                            <div class="header">
-                                <h4>{{single_data.title}}</h4>
-                                <img [src]="{{single_data.image}}" alt="{{single_data.title}}" />
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-{{dd.dragdrop_cols2}}" *ngIf="key == 'dropzones'">
-                    <div id="dropzones" *ngIf="levelname == dd.level" ng-repeat="(levelname, dropzone) in content">
-                        <div class="dropzone {{zone.classname}}" ng-repeat="zone in dropzone">
-                            <div class="header">
-                                <h4>{{zone.title}} <span class="dropzone_description">{{zone.description}}</span></h4>
-                            </div>
-                            <ul class="bin" id="{{zone.id}}" data-drop="true" data-jqyoui-options data-jqyoui-options jqyoui-droppable="{beforeDrop:'dd.handleDrop'}" style="width:{{zone.width}}px;height:{{zone.height}}px;"></ul>
-                        </div>
-                    </div>
-
-                </div>
-
-        <button id="creditsButton" draggable="false" onmousedown="return false" (click)="dd.toggleCreditsModal()" *ngIf="dd.data.game.popups != true && dd.data.game.credits">Credits</button>
-    </div//-->
 
 
 <!--//scied-modal visible="dd.showModal" modaltitle="dd.modal.title">

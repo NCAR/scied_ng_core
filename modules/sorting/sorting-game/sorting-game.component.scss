@@ -1,21 +1,21 @@
 button {
   width:150px;
   font-size: 18px;
-  padding:10px;
   border-color: #044062;
   background-color: #efefef;
+  border-radius:4px;
+  padding:7px 17px;
 }
 
 .container {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  margin: 20px;
 }
 
 .column {
   width: 33%;
-  padding: 20px;
+  padding: 0 20px;
   margin-right: auto;
   margin-left: auto;
 
@@ -31,15 +31,25 @@ button {
 
   &.middle {
     flex-grow: 1;
+    padding: 0;
   }
 
   &.right {
+    h1 {
+      margin:10px 0;
+    }
     .response {
       border: 2px inset black;
       font-size: 24px;
       min-height: 400px;
       overflow: hidden;
       padding: 10px;
+
+      h2 {
+        font-size: 30px;
+        font-weight: normal;
+        margin:0
+      }
     }
 
     .score {
@@ -86,7 +96,7 @@ button {
       span {
         background-color: rgb(43, 194, 83);
         background-image: -moz-linear-gradient(center bottom , rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69%);
-        border-radius: 20px 8px 8px 20px;
+        border-radius: 20px;
         box-shadow: 0 2px 9px rgba(255, 255, 255, 0.3) inset, 0 -2px 6px rgba(0, 0, 0, 0.4) inset;
         display: block;
         height: 100%;
@@ -110,4 +120,169 @@ button {
       }
     }
   }
+}
+
+.draggables {
+  padding: 0;
+  margin-top:5px;
+
+
+}
+.item {
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid #ccc;
+  background-color: #E9E9E9;
+  color:#000;
+
+
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  h4 {
+    margin:10px;
+    font-weight: normal;
+  }
+
+
+  &.dropped {
+    h4 {
+      font-size: 10px;
+    }
+    img {
+    width:50px;
+    height:50px;
+  }
+  }
+}
+
+.dropzone {
+  width:611px;
+  margin-right: auto;
+  margin-left: auto;
+
+  h4 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0.4em;
+    font-weight: normal;
+  }
+
+
+  .dropzone_description {
+      margin-left:130px;
+      font-size:20px;
+  }
+  &.bin{
+      min-height: 240px;
+      border:1px solid red;
+  }
+}
+
+
+.bin {
+    padding: 0;
+}
+
+.pblabel {
+    margin-left:30px;
+    font-size: 20px;
+}
+.score,
+.progress_header {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.progress_header {
+    float:left;
+    margin-top:60px;
+}
+
+
+.draggables .item,
+.dropzones .item {
+    cursor: move;
+    margin: 5px;
+    display:inline-block;
+}
+.draggables .item img,
+.dropzones .item img {
+    background-color:#fff;
+    padding:5px;
+}
+.dropzones .header{
+    border: 1px solid #ddd;
+    background-color:#ddd;
+    color: #333;
+    font-weight: bold;
+}
+.directions_subtext {
+    font-size: .8em;
+}
+.response {
+     border: 2px inset black;
+    font-size: 24px;
+    min-height: 400px;
+    overflow: hidden;
+    padding: 10px;
+}
+.response.correct h2{
+    color:green;
+}
+.response.incorrect h2 {
+    color: red;
+}
+
+
+
+.shrink img{
+    width: 75px;
+    height:75px;
+    transition:all 1s ease;
+    left:0;
+
+}
+
+.shrink h4{
+    font-size: 12px;
+    transition:all 1s ease;
+}
+.dragDrop .col-xs-6 {
+    padding:0;
+}
+
+.dragDrop .buttons_container {
+    bottom: 1px;
+    position: relative;
+    width:45%;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+}
+.dragDrop .buttons_container * {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+.dragDrop .buttons_container button {
+    margin:4px;
+}
+
+h1.interactive_title {
+    color: #000;
+    font-size: 1.4em;
+    margin: 0 0 1px;
+    padding: 5px;
+}
+
+.cdk-drop-dragging .cdk-drag {
+  transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
+}
+.cdk-drag-animating {
+  transition: transform 550ms cubic-bezier(0, 0, 0.2, 1);
+}
+.cdk-drag-placeholder {
+  background: rgba(0, 0, 0, .2);
 }
