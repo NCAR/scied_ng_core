@@ -169,15 +169,13 @@ button {
     padding: 0.4em;
     font-weight: normal;
   }
-
+  div.bin{
+      min-height: 240px;
+  }
 
   .dropzone_description {
       margin-left:130px;
       font-size:20px;
-  }
-  &.bin{
-      min-height: 240px;
-      border:1px solid red;
   }
 }
 
