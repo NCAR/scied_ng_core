@@ -1,12 +1,12 @@
 <div class="container" [ngClass]="level" *ngIf="data">
   <div class="column left">
 
-    <div cdkDropList [cdkDropListData]="sortingGameService.tiles" class="bin draggables" (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate" [cdkDropListConnectedTo]="bins">
-      <div [ngClass]="tile[level].correctDiv" class="item" [id]="tile.id" *ngFor="let tile of sortingGameService.tiles" cdkDrag>
+    <div cdkDropList [cdkDropListData]="sortingGameService.tiles" class="bin draggables" [cdkDropListEnterPredicate]="sortingGameService.noReturnPredicate" [cdkDropListConnectedTo]="sortingGameService.bins">
+      <div [ngClass]="tile[level].correctDiv" class="item" [id]="tile.id" *ngFor="let tile of sortingGameService.tiles" cdkDrag [cdkDragData]="tile">
         <div class="header">
-          <h4>{{tile.title}}</h4>
+          <h2>{{tile.title}}</h2>
           <img [src]="tile.image" [alt]="tile.title" />
-          <div class="item placeholder" *cdkDragPlaceholder></div>
+          <div *cdkDragPlaceholder></div>
           <div class="item" *cdkDragPreview>
             <div class="header">
               <h4>{{tile.title}}</h4>
@@ -17,20 +17,24 @@
       </div>
     </div>
 
-    <button class="creditsButton" mat-raised-button draggable="false" onmousedown="return false" (click)="toggleCreditsModal()" *ngIf="data.game.credits">Credits</button>
+    <div *ngIf="sortingGameService.game.numberOfTiles == 0">
+        <h1>You Win!</h1>
+        <p>Your score is {{sortingGameService.game.score}} points.</p>
+    </div>
+
+    <button class="creditsButton" mat-raised-button draggable="false" onmousedown="return false" (click)="sortingGameService.toggleCreditsModal()" *ngIf="sortingGameService.game.credits">Credits</button>
   </div>
   <div class="column middle">
-    <div class="dropzones" *ngFor="let zone of data.dropzones[level] | keyvalue">
+    <div class="dropzones" *ngFor="let zone of sortingGameService.game.dropzones | keyvalue">
       <div class="dropzone" [ngClass]="zone.value.classname">
         <div class="header">
-          <h4>{{zone.value.title}} <span class="dropzone_description">{{zone.value.description}}</span></h4>
+          <h1>{{zone.value.title}} <span class="dropzone_description">{{zone.value.description}}</span></h1>
         </div>
-        <div class="bin droppables" [id]="zone.value.id" cdkDropList [cdkDropListData]="dropBins[zone.value.id]" [ngClass]="zone.value.classname" (cdkDropListDropped)="drop($event)" (cdkDropListEntered)="entered($event)" (cdkDropListExited)="exited($event)"
-          cdkDropListDisabled="true">
+        <div class="bin droppables" [id]="zone.value.id" cdkDropList [cdkDropListData]="sortingGameService.dropBins[zone.value.id]" [ngClass]="zone.value.classname" (cdkDropListDropped)="sortingGameService.drop($event)" cdkDropListDisabled="true">
 
-          <div class="item dropped" *ngFor="let item of dropBins[zone.value.id]" cdkDrag>
+          <div class="item dropped" *ngFor="let item of sortingGameService.dropBins[zone.value.id]" cdkDrag>
             <div class="header">
-              <h4>{{item.title}}</h4>
+              <h2>{{item.title}}</h2>
               <div><img [src]="item.image" /></div>
             </div>
           </div>
@@ -42,13 +46,13 @@
   </div>
   <div class="column right">
     <h1>{{data.levels[level].title}}</h1>
-    <div class="response">
-      <h2 id="response_title">{{data.levels[level].directions.heading }}</h2>
-      <p id="response_body">{{data.levels[level].directions.description }}</p>
+    <div class="response" [ngClass]="sortingGameService.game.response.titleclass">
+      <h2 id="response_title">{{ sortingGameService.game.response.title}}</h2>
+      <p id="response_body">{{ sortingGameService.game.response.body }}</p>
     </div>
     <p class="directions_subtext">{{data.levels[level].directions.SUBTEXT}}</p>
 
-    <p class="score">Your Score = {{sortingGameService.score}}</p>
+    <p class="score">Your Score = {{sortingGameService.game.score}}</p>
     <div class="progress">
       <div class="progress_label">
         Your Progress:
@@ -66,7 +70,7 @@
     </div>
 
     <div class="levelbuttons">
-      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (click)="webapp.goToPage(baseUrl+'/'+item.key)">{{item.value.buttonTitle}}</button>
+      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (click)="changeLevel(item.key)">{{item.value.buttonTitle}}</button>
     </div>
   </div>
   <audio id="{{item.value.id}}" preload="auto" *ngFor="let item of data.audio | keyvalue">
@@ -75,26 +79,7 @@
 </div>
 
 
-<!--//scied-modal visible="dd.showModal" modaltitle="dd.modal.title">
-        <div ng-bind-html="dd.modal.text | unsafe"></div>
-        <button class="md-raised md-cornered closeBtn" (click)="dd.closeModal();">Close</button>
-    </scied-modal//-->
-<!--//scied-modal visible="dd.showChooseLevelModal" modaltitle="modal.title" *ngIf="dd.data.game.popups == true">
-        <label for="id">Choose a Level</label>
-         <select id="levelchooser" ng-change="dd.changeLevel();" ng-model="dd.level">
-             <option value="{{levelname}}" ng-repeat="(levelname, leveldata) in dd.data.levels" >{{leveldata.buttonTitle}}</option>
-        </select>
-    </scied-modal//-->
-<!--//scied-modal visible="dd.showCompleteModal" modaltitle="dd.dragDropModalTitle" class="dd.dragDropModalClass">
-        <p>Your score is {{dd.score}} points.</p>
-        <button (click)="dd.nextLevel()" *ngIf="dd.level != dd.last_level" id="nextButton">Next Level</button>
-        <button (click)="dd.restartGame()" *ngIf="dd.level == dd.last_level" id="restartButton">Restart Game</button>
-    </scied-modal//-->
-
-
-<!--//scied-modal *ngIf="game" [visible]="showCompleteModal" [modaltitle]="game.sortingModalTitle" [closable]="closable" (visibleChange)="onVisibleChange($event)">
-  <p>Your score is {{game.score}} points.</p>
-  <button (click)="nextLevel()" *ngIf="game.level != game.last_level" id="nextButton">Next Level</button>
-  <button (click)="restartGame()" *ngIf="game.level == game.last_level" id="restartButton">Restart Game</button>
-  <button mat-raised-button color="primary" (click)="closeModal();" class="closeBtn">Close</button>
-</scied-modal//-->
+<scied-modal *ngIf="data" [visible]="sortingGameService.showModal" [modaltitle]="sortingGameService.modal.title" [closable]="closable" (visibleChange)="onVisibleChange($event)">
+  <div [innerHTML]="sortingGameService.modal.body"></div>
+  <button mat-raised-button color="primary" (click)="sortingGameService.closeModal();" class="closeBtn">Close</button>
+</scied-modal>

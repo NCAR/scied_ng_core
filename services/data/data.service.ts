@@ -13,19 +13,19 @@ export class DataService {
   }
 
   shuffle(input){
-    var data = input.slice(0);
-    var counter = data.length;
+    let data = input.slice(0);
+    let counter = data.length;
 
     // While there are elements in the array
     while (counter > 0) {
         // Pick a random index
-        var index = Math.floor(Math.random() * counter);
+        let index = Math.floor(Math.random() * counter);
 
         // Decrease counter by 1
         counter--;
 
         // And swap the last element with it
-        var temp = data[counter];
+        let temp = data[counter];
         data[counter] = data[index];
         data[index] = temp;
     }
@@ -33,8 +33,8 @@ export class DataService {
   }
 
   getKeys(data) {
-      var arr = new Array();
-      for (var key in data) {
+      let arr = new Array();
+      for (let key in data) {
           arr.push(key);
       }
       return arr;
@@ -43,10 +43,10 @@ export class DataService {
   //http://blog.corrlabs.com/2011/02/shuffling-object-properties-in.html
   shuffleObj(data) {
 
-      var new_obj = {};
-      var keys = this.getKeys(data);
+      let new_obj = {};
+      let keys = this.getKeys(data);
       keys = this.shuffle(keys);
-      for (var key in keys) {
+      for (let key in keys) {
           new_obj[keys[key]] = data[keys[key]];
       }
       return new_obj;
