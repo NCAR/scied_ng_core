@@ -47,7 +47,7 @@
   <div class="column right">
     <h1>{{data.levels[level].title}}</h1>
     <div class="response" [ngClass]="sortingGameService.game.response.titleclass">
-      <h2 id="response_title">{{ sortingGameService.game.response.title}}</h2>
+      <h2 *ngIf="sortingGameService.game.response.title" id="response_title">{{ sortingGameService.game.response.title}}</h2>
       <p id="response_body">{{ sortingGameService.game.response.body }}</p>
     </div>
     <p class="directions_subtext">{{data.levels[level].directions.SUBTEXT}}</p>

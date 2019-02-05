@@ -22,7 +22,7 @@ button {
   &.left {
     .creditsButton {
       position:absolute;
-      bottom:250px;
+      bottom:120px;
     }
   }
 
@@ -64,7 +64,7 @@ button {
         }
       }
       &.normal h2 {
-        color:black;
+        color:inherit;
       }
     }
 
@@ -124,7 +124,7 @@ button {
 
     .levelbuttons {
       display:flex;
-      justify-content: space-between;
+      justify-content: space-around;
       margin-top:50px;
 
       button {
