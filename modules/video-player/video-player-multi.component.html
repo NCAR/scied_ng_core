@@ -1,5 +1,5 @@
-<div class="flex-container">
-    <div *ngIf="videos?.length > 0" class="menu">
+<div class="flex-container" *ngIf="videos?.length > 0">
+    <div class="menu">
       <h1>Videos</h1>
       <mat-card [class.active]="item.id == id" (click)="webapp.goToPage(item.content.url);" *ngFor="let item of videos">
         <mat-card-header>
@@ -9,8 +9,7 @@
       </mat-card>
   </div>
 
-  <div class="player">
-    <div class="video-player-multi" *ngIf="item">
+  <div class="player video-player-multi" *ngIf="item">
       <div class="video">
         <vg-player>
           <vg-overlay-play></vg-overlay-play>
@@ -33,6 +32,5 @@
         </vg-player>
       </div>
       <div class="desc" [innerHTML]="item.content.description"></div>
-    </div>
   </div>
 </div>
