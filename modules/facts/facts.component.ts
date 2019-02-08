@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { WebappService } from '../../services/webapp/webapp.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'scied-facts',
@@ -42,5 +43,9 @@ export class FactsComponent implements OnInit {
       if (this.data.prevFactId == this.data.factId) {
           this.newFact();
       }
+  }
+  ngOnDestroy() {
+      // unsubscribe to ensure no memory leaks
+      this.subscription.unsubscribe();
   }
 }
