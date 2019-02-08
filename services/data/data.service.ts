@@ -40,6 +40,9 @@ export class DataService {
       return arr;
   };
 
+  randomFromRange(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+  };
   //http://blog.corrlabs.com/2011/02/shuffling-object-properties-in.html
   shuffleObj(data) {
 

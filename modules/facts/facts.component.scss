@@ -1,0 +1,25 @@
+#factHolder{
+    position: absolute;
+    bottom:175px;
+    width: 50%;
+    left: 300px;
+}
+#factHolder p{
+    color:white;
+    font-size: 28px;
+    text-shadow: none;
+}
+.factButton{
+    height:50px;
+    background-color: #eee;
+    border-color: #ccc;
+    color: #2f3e46;
+    text-shadow: 0 1px 0 #ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-weight:bold;
+    font-size:20px;
+    padding: 10px 50px;
+}
