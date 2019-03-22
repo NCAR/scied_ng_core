@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IdleTimeoutServiceService } from './idle-timeout.service';
+import { IdleTimeoutService } from './idle-timeout.service';
 
 describe('IdleTimeoutService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

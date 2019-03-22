@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { MemoryGameComponent } from './memory-game.component';
+import { MemoryGameComponent} from './memory-game.component';
+import { MemoryCardComponent } from '../memory-card/memory-card.component';
 
 describe('MemoryGameComponent', () => {
   let component: MemoryGameComponent;
@@ -8,7 +8,7 @@ describe('MemoryGameComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemoryGameComponent ]
+      declarations: [ MemoryGameComponent, MemoryCardComponent ]
     })
     .compileComponents();
   }));

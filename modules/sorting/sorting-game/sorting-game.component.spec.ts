@@ -1,20 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SciedModalModule } from '../../scied-modal/scied-modal.module';
+import { SortingGameComponent } from './Sorting-game.component';
 
-import { MemoryGameComponent } from './memory-game.component';
-
-describe('MemoryGameComponent', () => {
-  let component: MemoryGameComponent;
-  let fixture: ComponentFixture<MemoryGameComponent>;
+describe('SortingGameComponent', () => {
+  let component: SortingGameComponent;
+  let fixture: ComponentFixture<SortingGameComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemoryGameComponent ]
+      imports: [
+        DragDropModule,
+        SciedModalModule
+      ],
+      declarations: [ SortingGameComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MemoryGameComponent);
+    fixture = TestBed.createComponent(SortingGameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

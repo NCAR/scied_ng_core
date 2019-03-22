@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { SciedFooterComponent } from './scied-footer.component';
 
 describe('SciedFooterComponent', () => {
@@ -8,6 +9,10 @@ describe('SciedFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MatIconModule,
+        MatToolbarModule
+      ],
       declarations: [ SciedFooterComponent ]
     })
     .compileComponents();

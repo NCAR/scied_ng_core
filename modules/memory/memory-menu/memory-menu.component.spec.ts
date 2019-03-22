@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { SciedModalModule } from '../../scied-modal/scied-modal.module';
 import { MemoryMenuComponent } from './memory-menu.component';
 
 describe('MemoryMenuComponent', () => {
@@ -8,6 +9,10 @@ describe('MemoryMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MatGridListModule,
+        SciedModalModule
+      ],
       declarations: [ MemoryMenuComponent ]
     })
     .compileComponents();

@@ -16,6 +16,10 @@ describe('MemoryCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MemoryCardComponent);
     component = fixture.componentInstance;
+    component.tile = {
+      backImage: "",
+      frontImage: ""
+    };
     fixture.detectChanges();
   });
 
