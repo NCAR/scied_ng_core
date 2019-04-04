@@ -27,8 +27,8 @@ export class SortingGameService {
   tiles = [];
   dropBins = [];
   bins = [];
-  data:any;
-  level:any;
+  data:any = null;
+  level:any = null;
 
   constructor(private dataService: DataService) {}
   setupGame(data, level){
@@ -61,31 +61,35 @@ export class SortingGameService {
       last_level = key
     });
 
-    let current_level = this.level.replace('level', '');
-    last_level = last_level.replace('level', '');
-    let value:any = (parseInt(current_level) / parseInt(last_level)) * 100;
-    this.game.progressPercent = value + '%';
+    if(this.level){
+      let current_level = this.level.replace('level', '');
+      last_level = last_level.replace('level', '');
+      let value:any = (parseInt(current_level) / parseInt(last_level)) * 100;
+      this.game.progressPercent = value + '%';
+    }
   }
 
   initDropZones() {
     //zones
-    this.game.dropzones = this.data.dropzones[this.level];
-    let dropList = [];
-    for (let key in this.data.dropzones[this.level]) {
-      if (this.data.dropzones[this.level].hasOwnProperty(key)) {
-        dropList.push(this.data.dropzones[this.level][key].id);
-      }
-    }
-
-    // bins
-    for (let i = 0; i < this.data.dropzones[this.level].length; i++) {
-      let emptyBin = [];
-      if (!this.dropBins[this.data.dropzones[this.level][i].id]) {
-        this.dropBins[this.data.dropzones[this.level][i].id] = [];
+    if(this.game){
+      this.game.dropzones = this.data.dropzones[this.level];
+      let dropList = [];
+      for (let key in this.data.dropzones[this.level]) {
+        if (this.data.dropzones[this.level].hasOwnProperty(key)) {
+          dropList.push(this.data.dropzones[this.level][key].id);
+        }
       }
 
-      if (this.bins.indexOf(this.data.dropzones[this.level][i].id) == -1) {
-        this.bins.push(this.data.dropzones[this.level][i].id);
+      // bins
+      for (let i = 0; i < this.data.dropzones[this.level].length; i++) {
+        let emptyBin = [];
+        if (!this.dropBins[this.data.dropzones[this.level][i].id]) {
+          this.dropBins[this.data.dropzones[this.level][i].id] = [];
+        }
+
+        if (this.bins.indexOf(this.data.dropzones[this.level][i].id) == -1) {
+          this.bins.push(this.data.dropzones[this.level][i].id);
+        }
       }
     }
   }

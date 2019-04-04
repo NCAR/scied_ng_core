@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../../services/data/data.service';
 import { WebappService } from '../../../services/webapp/webapp.service';
 import { MemoryGameService } from '../memory-game.service';
-import { MemoryCard } from '../../../models/memory-game.model';
+import { MemoryCard } from '../memory-game.model';
 
 
 @Component({
@@ -11,11 +11,11 @@ import { MemoryCard } from '../../../models/memory-game.model';
   styleUrls: ['./memory-game.component.scss']
 })
 export class MemoryGameComponent implements OnInit {
-  @Input() data:any;
-  @Input() baseUrl:any;
-  @Input() level:any;
+  @Input() data:any = null;
+  @Input() baseUrl:any = null;
+  @Input() level:any = null;
   tiles:any = [];
-  chosenImage:string;
+  chosenImage:string = null;
   tile_width_xlg:boolean = false;
   tile_width_lg:boolean = false;
   tile_width_med:boolean = false;
@@ -27,6 +27,7 @@ export class MemoryGameComponent implements OnInit {
 
   ngOnInit(){}
   ngOnChanges(){
+    //
     this.loadData();
   }
   reloadData(){
@@ -38,7 +39,7 @@ export class MemoryGameComponent implements OnInit {
     this.loadData();
   }
   loadData(){
-    if (this.data.game.levels[this.level]) {
+    if (this.data && this.data.game && this.data.game.levels[this.level]) {
         // pull out only items for this level
         this.data.tiles.forEach(tile => {
           if(tile.levels.includes(this.level)){
@@ -68,30 +69,30 @@ export class MemoryGameComponent implements OnInit {
     }
   }
   determineResolution(){
-      if(this.memoryGameService.data.game.resolution == 'exhibit'){
+      if(this.memoryGameService.data && this.memoryGameService.data.game.resolution == 'exhibit'){
         this.resolution_exhibit = true;
-      } else if (this.memoryGameService.data.game.resolution == 'web'){
+      } else if (this.memoryGameService.data && this.memoryGameService.data.game.resolution == 'web'){
           this.resolution_web = true;
       }
   }
   calculateWidths(){
     //determine width of tile section
-    if(this.memoryGameService.game.unmatchedPairs >= 14){
+    if(this.memoryGameService.data && this.memoryGameService.game.unmatchedPairs >= 14){
       this.tile_width_xlg = true;
       this.tile_width_lg = false;
       this.tile_width_med = false;
       this.tile_width_small = false;
-    } else if(this.memoryGameService.game.unmatchedPairs == 12){
+    } else if(this.memoryGameService.data && this.memoryGameService.game.unmatchedPairs == 12){
       this.tile_width_xlg = false;
       this.tile_width_lg = true;
       this.tile_width_med = false;
       this.tile_width_small = false;
-    } else if(this.memoryGameService.game.unmatchedPairs == 10){
+    } else if(this.memoryGameService.data && this.memoryGameService.game.unmatchedPairs == 10){
       this.tile_width_xlg = false;
       this.tile_width_lg = false;
       this.tile_width_med = true;
       this.tile_width_small = false;
-    } else if(this.memoryGameService.game.unmatchedPairs <= 8){
+    } else if(this.memoryGameService.data && this.memoryGameService.game.unmatchedPairs <= 8){
       this.tile_width_xlg = false;
       this.tile_width_lg = false;
       this.tile_width_med = false;

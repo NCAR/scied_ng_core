@@ -8,12 +8,15 @@ import { Component, Input } from '@angular/core';
 
 
 export class ChartImageComponent {
-  @Input() range:any;
-  @Input() axis_y_label:any;
-  @Input() imgPath:any;
+  @Input() range:any = null;
+  @Input() axis_y_label:any = null;
+  @Input() imgPath:any = null;
 
   constructor (){
-    this.imgPath = this.imgPath+'images/climate_exhibit_co2/';
+    console.log(this.range);
+    if(this.imgPath){
+      this.imgPath = this.imgPath+'images/climate_exhibit_co2/';
+    }
   }
 
 }

@@ -9,8 +9,8 @@ import { WebappService } from '../../../services/webapp/webapp.service';
 export class MemoryMenuComponent implements OnInit {
   showCreditsModal = false;
   creditstitle = "Credits and Acknowledgements";
-  @Input() data:any;
-  @Input() baseUrl:any;
+  @Input() data:any = null;
+  @Input() baseUrl:any = null;
   resolution_web:boolean = false;
   resolution_exhibit:boolean = true;
 
@@ -20,9 +20,9 @@ export class MemoryMenuComponent implements OnInit {
     this.determineResolution();
   }
   determineResolution(){
-    if(this.data.game.resolution == 'exhibit'){
+    if(this.data && this.data.game && this.data.game.resolution == 'exhibit'){
       this.resolution_exhibit = true;
-    } else if (this.data.game.resolution == 'web'){
+    } else if(this.data && this.data.game && this.data.game.resolution == 'web'){
         this.resolution_web = true;
     }
   }

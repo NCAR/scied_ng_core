@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SortingGameComponent } from './sorting-game/sorting-game.component';
 import { SortingGameService } from './sorting-game.service';
+import { MockSortingGameService } from './sorting-game.service.mock';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { SortingGameService } from './sorting-game.service';
   ],
   declarations: [SortingGameComponent],
   exports: [SortingGameComponent],
-  providers: [SortingGameService]
+  providers: [SortingGameService, MockSortingGameService]
 })
 export class SortingModule { }

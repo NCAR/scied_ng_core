@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MemoryGame, MemoryCard } from '../../models/memory-game.model';
+import { MemoryGame, MemoryCard } from './memory-game.model';
 
 @Injectable()
 export class MemoryGameService {
@@ -31,7 +31,7 @@ export class MemoryGameService {
     matchimage: "",
     matchcontent: ""
   };
-  data:any;
+  data:any = null;
 
   game: MemoryGame = Object.create(this.gameInit);
 

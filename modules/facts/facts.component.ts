@@ -9,13 +9,13 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./facts.component.scss']
 })
 export class FactsComponent implements OnInit {
-  @Input() source:string;
+  @Input() source:string = null;
   data = {
     'factId': null,
     'prevFactId': null,
     'facts': null
   };
-  subscription: Subscription;
+  subscription: Subscription = null;
 
   constructor(private dataService: DataService, public webapp: WebappService) {}
 
@@ -46,6 +46,8 @@ export class FactsComponent implements OnInit {
   }
   ngOnDestroy() {
       // unsubscribe to ensure no memory leaks
-      this.subscription.unsubscribe();
+      if(this.subscription){
+        this.subscription.unsubscribe();
+      }
   }
 }

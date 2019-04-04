@@ -11,16 +11,18 @@ import { SortingGameService } from '../sorting-game.service';
   styleUrls: ['./sorting-game.component.scss']
 })
 export class SortingGameComponent implements OnInit {
-  @Input() data: any;
-  @Input() baseUrl: any;
-  @Input() level: any;
+  @Input() data: any = null;
+  @Input() baseUrl: any = null;
+  @Input() level: any = null;
 
 
   constructor(private dataService: DataService, public webapp: WebappService, private sortingGameService: SortingGameService) { }
 
-  ngOnInit() { }
+  ngOnInit() {}
   ngOnChanges() {
-    this.sortingGameService.setupGame(this.data, this.level);
+    if(this.data && this.level){
+      this.sortingGameService.setupGame(this.data, this.level);
+    }
   }
   changeLevel(tobeLevel){
     this.sortingGameService.resetGame();

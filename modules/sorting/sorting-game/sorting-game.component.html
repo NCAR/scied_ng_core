@@ -1,6 +1,5 @@
-<div class="container" [ngClass]="level" *ngIf="data">
+<div class="container" [ngClass]="level" *ngIf="data != null && level != null && sortingGameService.tiles">
   <div class="column left">
-
     <div cdkDropList [cdkDropListData]="sortingGameService.tiles" class="bin draggables" [cdkDropListEnterPredicate]="sortingGameService.noReturnPredicate" [cdkDropListConnectedTo]="sortingGameService.bins">
       <div [ngClass]="tile[level].correctDiv" class="item" [id]="tile.id" *ngFor="let tile of sortingGameService.tiles" cdkDrag [cdkDragData]="tile">
         <div class="header">
@@ -45,7 +44,7 @@
 
   </div>
   <div class="column right">
-    <h1>{{data.levels[level].title}}</h1>
+    <h1 *ngIf="levels && data.levels">{{data.levels[level].title}}</h1>
     <div class="response" [ngClass]="sortingGameService.game.response.titleclass">
       <h2 *ngIf="sortingGameService.game.response.title" id="response_title">{{ sortingGameService.game.response.title}}</h2>
       <p id="response_body">{{ sortingGameService.game.response.body }}</p>

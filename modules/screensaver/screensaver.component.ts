@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WebappService } from '../../services/webapp/webapp.service';
 import { interval } from 'rxjs/observable/interval';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'scied-screensaver',
@@ -9,15 +9,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./screensaver.component.scss']
 })
 export class ScreensaverComponent implements OnInit, OnDestroy {
-  subscribe:any;
-  chosenImg:any;
+  subscribe:any = null;
+  chosenImg:any = null;
   chosenImgIndex:number = 0;
   totalImgs:number = 0;
-  imgList:any;
-  constructor(private outlet: RouterOutlet, public webapp: WebappService) {
-    this.imgList = outlet.activatedRouteData['images']
-    this.totalImgs = this.imgList.length;
-  }
+  imgList:any = null;
+
+  constructor(private route: ActivatedRoute, public webapp: WebappService) { }
+
   rotateImg(){
     let index = Math.floor(Math.random()*this.totalImgs)
     if(index != this.chosenImgIndex){
@@ -27,14 +26,19 @@ export class ScreensaverComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // pick an image
-    this.chosenImg = this.imgList[this.chosenImgIndex];
-    const source = interval(10000);
-
-    this.subscribe = source.subscribe((val) => {this.rotateImg()});
+    this.imgList = this.route.snapshot.data.images;
+    if(this.imgList){
+      this.totalImgs = this.imgList.length;
+      // pick an image
+      this.chosenImg = this.imgList[this.chosenImgIndex];
+      const source = interval(10000);
+      this.subscribe = source.subscribe((val) => {this.rotateImg()});
+    }
   }
   ngOnDestroy(){
-    this.subscribe.unsubscribe();
+    if(this.subscribe){
+      this.subscribe.unsubscribe();
+    }
   }
 
 }
