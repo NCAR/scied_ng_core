@@ -18,7 +18,6 @@ describe('WebappService', () => {
   });
 
   it('should be created', () => {
-    const service: WebappService = TestBed.get(WebappService);
     expect(service).toBeTruthy();
   });
 });
