@@ -8,8 +8,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DataService {
   constructor(private http: HttpClient) { }
 
-  getData(url): Observable<any[]> {
-    return this.http.get<any[]>(url)
+  getData(url): Observable<any> {
+    return this.http.get<any>(url)
   }
 
   shuffle(input){

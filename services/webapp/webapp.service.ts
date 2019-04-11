@@ -50,8 +50,14 @@ export class WebappService {
   setBaseUrl(val){
     this.baseUrl = val;
   }
+  getBaseUrl(){
+    return this.baseUrl;
+  }
   setBackUrl(val){
     this.backUrl = val;
+  }
+  getBackUrl(){
+    return this.backUrl;
   }
 
   setShowFooter(val){
