@@ -28,7 +28,7 @@ describe('ScreensaverComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ScreensaverComponent);
     component = fixture.componentInstance;
-    component.chosenImg =  { src: "/assets/apps/screensaver_hao/images/screensaver/image_map_attractor.jpg", alt:"Sun-Earth Connection" };
+    component.chosenImg =  { src: "assets/apps/screensaver_hao/images/screensaver/image_map_attractor.jpg", alt:"Sun-Earth Connection" };
     fixture.detectChanges();
   });
 

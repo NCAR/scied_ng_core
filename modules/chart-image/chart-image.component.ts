@@ -13,7 +13,6 @@ export class ChartImageComponent {
   @Input() imgPath:any = null;
 
   constructor (){
-    console.log(this.range);
     if(this.imgPath){
       this.imgPath = this.imgPath+'images/climate_exhibit_co2/';
     }

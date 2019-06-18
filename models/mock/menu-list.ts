@@ -13,10 +13,10 @@ export const MENU: MenuList[] = [
         "width": "475",
         "height": "243",
         "image": {
-          "file": "/assets/images/menu/posterframes/forecast-a-hurricane.jpg"
+          "file": "assets/images/menu/posterframes/forecast-a-hurricane.jpg"
         },
         "mp4": {
-          "file": "/assets/videos/menu/forecast-a-hurricane.mp4"
+          "file": "assets/videos/menu/forecast-a-hurricane.mp4"
         }
       }
     }
@@ -33,10 +33,10 @@ export const MENU: MenuList[] = [
         "width": "475",
         "height": "243",
         "image": {
-          "file": "/assets/images/menu/posterframes/create-a-snowstorm.jpg"
+          "file": "assets/images/menu/posterframes/create-a-snowstorm.jpg"
         },
         "mp4": {
-          "file": "/assets/videos/menu/create-a-snowstorm.mp4"
+          "file": "assets/videos/menu/create-a-snowstorm.mp4"
         }
       }
     }
@@ -53,10 +53,10 @@ export const MENU: MenuList[] = [
         "width": "475",
         "height": "243",
         "image": {
-          "file": "/assets/images/menu/posterframes/katrina.jpg"
+          "file": "assets/images/menu/posterframes/katrina.jpg"
         },
         "mp4": {
-          "file": "/assets/videos/menu/katrina.mp4"
+          "file": "assets/videos/menu/katrina.mp4"
         }
       }
     }

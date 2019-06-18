@@ -50,7 +50,7 @@ describe('SortingGameComponent', () => {
         "visible_2006": {
           "title": "Visible 2006",
           "id": "visible_2006",
-          "image": "/assets/apps/sort-sun/images/draggables/solar_min_visible_soho_mdi_15may2006_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/solar_min_visible_soho_mdi_15may2006_150x150.jpg",
           "level1": {
             "correctDiv": "lower",
             "response": {
@@ -68,7 +68,7 @@ describe('SortingGameComponent', () => {
         "visible_2001": {
           "title": "Visible 2001",
           "id": "visible_2001",
-          "image": "/assets/apps/sort-sun/images/draggables/solar_max_visible_soho_mdi_29march2001_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/solar_max_visible_soho_mdi_29march2001_150x150.jpg",
           "level1": {
             "correctDiv": "upper",
             "response": {
@@ -86,7 +86,7 @@ describe('SortingGameComponent', () => {
         "uv_2009": {
           "title": "UV 2009",
           "id": "uv_2009",
-          "image": "/assets/apps/sort-sun/images/draggables/uv_min_soho_eit_171_17july2009_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/uv_min_soho_eit_171_17july2009_150x150.jpg",
           "level1": {
             "correctDiv": "lower",
             "response": {
@@ -104,7 +104,7 @@ describe('SortingGameComponent', () => {
         "xray_2001": {
           "title": "X-ray 2001",
           "id": "xray_2001",
-          "image": "/assets/apps/sort-sun/images/draggables/xray_max_yohkoh_28march2001_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/xray_max_yohkoh_28march2001_150x150.jpg",
           "level1": {
             "correctDiv": "upper",
             "response": {
@@ -122,7 +122,7 @@ describe('SortingGameComponent', () => {
         "xray_1996": {
           "title": "X-ray 1996",
           "id": "xray_1996",
-          "image": "/assets/apps/sort-sun/images/draggables/xray_max_yohkoh_8march1996_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/xray_max_yohkoh_8march1996_150x150.jpg",
           "level1": {
             "correctDiv": "lower",
             "response": {
@@ -140,7 +140,7 @@ describe('SortingGameComponent', () => {
         "uv_2002": {
           "title": "UV 2002",
           "id": "uv_2002",
-          "image": "/assets/apps/sort-sun/images/draggables/uv_max_soho_eit_171_3feb2002_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/uv_max_soho_eit_171_3feb2002_150x150.jpg",
           "level1": {
             "correctDiv": "upper",
             "response": {
@@ -158,7 +158,7 @@ describe('SortingGameComponent', () => {
         "corona_1994": {
           "title": "Corona 1994",
           "id": "corona_1994",
-          "image": "/assets/apps/sort-sun/images/draggables/corona_eclipse_chile_1994_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/corona_eclipse_chile_1994_150x150.jpg",
           "level1": {
             "correctDiv": "lower",
             "response": {
@@ -176,7 +176,7 @@ describe('SortingGameComponent', () => {
         "corona_1980": {
           "title": "Corona 1980",
           "id": "corona_1980",
-          "image": "/assets/apps/sort-sun/images/draggables/corona_eclipse_india_1980_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/corona_eclipse_india_1980_150x150.jpg",
           "level1": {
             "correctDiv": "upper",
             "response": {
@@ -194,7 +194,7 @@ describe('SortingGameComponent', () => {
         "magnet_2002": {
           "title": "Magnet 2002",
           "id": "magnet_2002",
-          "image": "/assets/apps/sort-sun/images/draggables/magnetogram_max_soho_4feb2002_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/magnetogram_max_soho_4feb2002_150x150.jpg",
           "level1": {
             "correctDiv": "upper",
             "response": {
@@ -212,7 +212,7 @@ describe('SortingGameComponent', () => {
         "halpha_2009": {
           "title": "H-alpha 2009",
           "id": "halpha_2009",
-          "image": "/assets/apps/sort-sun/images/draggables/min_kanzelhoehe_halpha_18aug2009.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/min_kanzelhoehe_halpha_18aug2009.jpg",
           "level1": {
             "correctDiv": "lower",
             "response": {
@@ -230,7 +230,7 @@ describe('SortingGameComponent', () => {
         "halpha_2000": {
           "title": "H-alpha 2000",
           "id": "halpha_2000",
-          "image": "/assets/apps/sort-sun/images/draggables/max_bbso_halpha_18july2000.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/max_bbso_halpha_18july2000.jpg",
           "level1": {
             "correctDiv": "upper",
             "response": {
@@ -248,7 +248,7 @@ describe('SortingGameComponent', () => {
         "chromosphere": {
           "title": "Chromosphere",
           "id": "chromosphere",
-          "image": "/assets/apps/sort-sun/images/draggables/chromosphere_soho_eit304_4may2002_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/chromosphere_soho_eit304_4may2002_150x150.jpg",
           "level2": {
             "correctDiv": "mid",
             "response": {
@@ -270,7 +270,7 @@ describe('SortingGameComponent', () => {
         "sunspots": {
           "title": "Sunspots",
           "id": "sunspots",
-          "image": "/assets/apps/sort-sun/images/draggables/sunspot_sst_8aug2003_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/sunspot_sst_8aug2003_150x150.jpg",
           "level2": {
             "correctDiv": "lower",
             "response": {
@@ -292,7 +292,7 @@ describe('SortingGameComponent', () => {
         "coronal_loop": {
           "title": "Coronal Loop",
           "id": "coronal_loop",
-          "image": "/assets/apps/sort-sun/images/draggables/coronal_loops_trace_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/coronal_loops_trace_150x150.jpg",
           "level2": {
             "correctDiv": "upper",
             "response": {
@@ -314,7 +314,7 @@ describe('SortingGameComponent', () => {
         "photosphere": {
           "title": "Photosphere",
           "id": "photosphere",
-          "image": "/assets/apps/sort-sun/images/draggables/photosphere_sst_22aug2003_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/photosphere_sst_22aug2003_150x150.jpg",
           "level2": {
             "correctDiv": "lower",
             "response": {
@@ -336,7 +336,7 @@ describe('SortingGameComponent', () => {
         "corona": {
           "title": "Corona",
           "id": "corona",
-          "image": "/assets/apps/sort-sun/images/draggables/corona_eclipse_india_1980_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/corona_eclipse_india_1980_150x150.jpg",
           "level2": {
             "correctDiv": "upper",
             "response": {
@@ -358,7 +358,7 @@ describe('SortingGameComponent', () => {
         "sun_core": {
           "title": "Sun's Core",
           "id": "sun_core",
-          "image": "/assets/apps/sort-sun/images/draggables/solar_core_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/solar_core_150x150.jpg",
           "level2": {
             "correctDiv": "upper",
             "response": {
@@ -380,7 +380,7 @@ describe('SortingGameComponent', () => {
         "prominence": {
           "title": "Prominence",
           "id": "prominence",
-          "image": "/assets/apps/sort-sun/images/draggables/prominence_soho_eit_304_14sept1999_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/prominence_soho_eit_304_14sept1999_150x150.jpg",
           "level2": {
             "correctDiv": "mid",
             "response": {
@@ -402,7 +402,7 @@ describe('SortingGameComponent', () => {
         "blast_furnace": {
           "title": "Blast Furnace",
           "id": "blast_furnace",
-          "image": "/assets/apps/sort-sun/images/draggables/blast_furnace_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/blast_furnace_150x150.jpg",
           "level2": {
             "correctDiv": "lower",
             "response": {
@@ -424,7 +424,7 @@ describe('SortingGameComponent', () => {
         "solar_flare": {
           "title": "Solar Flare",
           "id": "solar_flare",
-          "image": "/assets/apps/sort-sun/images/draggables/solar_flare_sdo_aia_131_23oct2012_0316_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/solar_flare_sdo_aia_131_23oct2012_0316_150x150.jpg",
           "level2": {
             "correctDiv": "upper",
             "response": {
@@ -446,7 +446,7 @@ describe('SortingGameComponent', () => {
         "filament": {
           "title": "Filament",
           "id": "filament",
-          "image": "/assets/apps/sort-sun/images/draggables/filament_bbso_halpha_18july2000_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/filament_bbso_halpha_18july2000_150x150.jpg",
           "level2": {
             "correctDiv": "mid",
             "response": {
@@ -468,7 +468,7 @@ describe('SortingGameComponent', () => {
         "spicules": {
           "title": "Spicules",
           "id": "spicules",
-          "image": "/assets/apps/sort-sun/images/draggables/spicules_hinode_11nov2006_150x150.jpg",
+          "image": "assets/apps/sort-sun/images/draggables/spicules_hinode_11nov2006_150x150.jpg",
           "level2": {
             "correctDiv": "mid",
             "response": {
@@ -543,22 +543,22 @@ describe('SortingGameComponent', () => {
       "audio": {
         "complete": {
           "id": "complete",
-          "src": "/assets/apps/sorting/audio/applause-1.mp3",
+          "src": "assets/apps/sorting/audio/applause-1.mp3",
           "type": "audio/mp4"
         },
         "correct": {
           "id": "correct",
-           "src": "/assets/apps/sorting/audio/bell.mp3",
+           "src": "assets/apps/sorting/audio/bell.mp3",
           "type": "audio/mp4"
         },
         "incorrect": {
           "id": "incorrect",
-           "src": "/assets/apps/sorting/audio/clang.mp3",
+           "src": "assets/apps/sorting/audio/clang.mp3",
           "type": "audio/mp4"
         }
       },
       "game": {
-        "credits": "<p align=\"center\"><img src=\"/assets/images/scied_logo_500x55.png\" width=\"500px\"/></p><p>This interactive was created by the <strong>UCAR Center for Science Education</strong>.</p><p>Software design by <strong>Ryan C. McVeigh</strong>, <strong>Randy M. Russell</strong>, and <strong>Sharon Clark</strong>. Programming by Sharon Clark. Text, image selection and educational design by Randy Russell. Artwork by <strong>Lisa Gardiner</strong>. Scientific information by <strong>Mark Miesch</strong>, <strong>Yuhong Fan</strong> and Randy Russell.</p><p>images provided by NCAR High Altitude Observatory, SOHO (NASA/ESA), NASA Solar Dynamics Observatory, Hinode - NASA and Japan Aerospace Exploration Agency, TRACE (NASA), Big Bear Solar Observatory, and Swedish Solar Telescope - Royal Swedish Academy of Sciences.</p><p>&copy; 2012-2016 University Corporation for Atmospheric Research</p></p>"
+        "credits": "<p align=\"center\"><img src=\"assets/images/scied_logo_500x55.png\" width=\"500px\"/></p><p>This interactive was created by the <strong>UCAR Center for Science Education</strong>.</p><p>Software design by <strong>Ryan C. McVeigh</strong>, <strong>Randy M. Russell</strong>, and <strong>Sharon Clark</strong>. Programming by Sharon Clark. Text, image selection and educational design by Randy Russell. Artwork by <strong>Lisa Gardiner</strong>. Scientific information by <strong>Mark Miesch</strong>, <strong>Yuhong Fan</strong> and Randy Russell.</p><p>images provided by NCAR High Altitude Observatory, SOHO (NASA/ESA), NASA Solar Dynamics Observatory, Hinode - NASA and Japan Aerospace Exploration Agency, TRACE (NASA), Big Bear Solar Observatory, and Swedish Solar Telescope - Royal Swedish Academy of Sciences.</p><p>&copy; 2012-2016 University Corporation for Atmospheric Research</p></p>"
       }
     }
 ;

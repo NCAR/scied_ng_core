@@ -45,7 +45,7 @@ describe('MemoryGameComponent', () => {
     component.level = "level1";
     component.data = {
       "game": {
-        "backImage": "/assets/apps/sun-memory/images/cards/cardback.png",
+        "backImage": "assets/apps/sun-memory/images/cards/cardback.png",
         "credits": {
           "text": "<p style='text-align: center;'><img src='/assets/images/scied_logo_500x55.png' width='500px'/></p><p>This interactive was created by the <strong>UCAR Center for Science Education</strong>.</p><p>Software design by <strong>Randy M. Russell</strong>, and <strong>Sharon Clark</strong>.<br/>Programming by <strong>Sharon Clark</strong>.</p><p>Educational design and text by <strong>Randy M. Russell</strong>.</p><p>&copy; 2012-2019 University Corporation for Atmospheric Research</p>"
         },
