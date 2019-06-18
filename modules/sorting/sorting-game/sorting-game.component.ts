@@ -16,7 +16,7 @@ export class SortingGameComponent implements OnInit {
   @Input() level: any = null;
 
 
-  constructor(private dataService: DataService, public webapp: WebappService, private sortingGameService: SortingGameService) { }
+  constructor(private dataService: DataService, public webapp: WebappService, public sortingGameService: SortingGameService) { }
 
   ngOnInit() {}
   ngOnChanges() {
