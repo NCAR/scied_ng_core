@@ -10,7 +10,7 @@ export class IdleTimeoutService {
   constructor() {
     //register event listeners for user activity
       window.addEventListener('mousemove', (event) => {
-            this.reset();
+            //this.reset();
       });
       window.addEventListener('mouseclick', (event) => {
             this.reset();
