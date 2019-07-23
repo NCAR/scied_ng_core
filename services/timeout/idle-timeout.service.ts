@@ -12,7 +12,7 @@ export class IdleTimeoutService {
       window.addEventListener('mousemove', (event) => {
             //this.reset();
       });
-      window.addEventListener('mouseclick', (event) => {
+      window.addEventListener('click', (event) => {
             this.reset();
       });
       window.addEventListener('keydown', (event) => {
