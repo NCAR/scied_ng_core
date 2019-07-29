@@ -4,7 +4,7 @@
         {{item.content.title}}
       </h1>
       <img class="placeholder" *ngIf="!item.content.placeholder.mp4 && item.content.placeholder.image" [src]="item.content.placeholder.image?.file" [width]="item.content.placeholder.width" [height]="item.content.placeholder.height" draggable="false" onmousedown="return false">
-      <video class="placeholder" *ngIf="item.content.placeholder.mp4" [width]="item.content.placeholder.width" [height]="item.content.placeholder.height" autoplay loop>
+      <video class="placeholder" *ngIf="item.content.placeholder.mp4" [width]="item.content.placeholder.width" [height]="item.content.placeholder.height" [poster]="item.content.placeholder.image?.file" autoplay loop>
         <source [src]="item.content.placeholder.mp4?.file" type="video/mp4">
         Your browser does not support the video tag.
       </video>
