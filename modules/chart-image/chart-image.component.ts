@@ -13,9 +13,6 @@ export class ChartImageComponent {
   @Input() imgPath:any = null;
 
   constructor (){
-    if(this.imgPath){
-      this.imgPath = this.imgPath+'images/climate_exhibit_co2/';
-    }
   }
 
 }
