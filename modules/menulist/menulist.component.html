@@ -1,5 +1,5 @@
   <div class="flex-container" *ngIf="data?.length > 0" [ngClass]="customClass">
-    <div class="flex-item" (click)="webapp.goToPage(item.content.url);" *ngFor="let item of data" [ngClass]="itemClass">
+    <div class="flex-item" (tap)="webapp.goToPage(item.content.url);" *ngFor="let item of data" [ngClass]="itemClass">
       <h1>
         {{item.content.title}}
       </h1>

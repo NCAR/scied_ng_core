@@ -1,4 +1,4 @@
 <div id="factHolder">
     <p [innerHTML]="data.facts[data.factId].fact" *ngIf="data.facts"></p>
-    <button (click)="newFact()" class="factButton">Next Fact</button>
+    <button (tap)="newFact()" class="factButton">Next Fact</button>
 </div>
