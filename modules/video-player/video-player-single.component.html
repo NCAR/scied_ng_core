@@ -1,4 +1,4 @@
-<div class="video-player-single" *ngIf="item">
+<div class="video-player-single" *ngIf="item" [style.width.px]="item.content.video.width">
   <vg-player>
     <vg-overlay-play></vg-overlay-play>
     <vg-buffering></vg-buffering>
