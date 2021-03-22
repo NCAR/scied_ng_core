@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" [class.row3]="webapp.getBackButton() && webapp.getHomeButton()" [class.row2first]="webapp.getBackButton() && !webapp.getHomeButton()" [class.row2last]="!webapp.getBackButton() && webapp.getHomeButton()" [class.row1]="!webapp.getBackButton() && !webapp.getHomeButton()">
 
-    <button mat-raised-button color="primary-light" *ngIf="webapp.getBackButton();" (tap)="webapp.goBack();"><mat-icon>arrow_back</mat-icon>Back</button>
+    <button mat-raised-button color="primary-light" *ngIf="webapp.getBackButton();" (click)="webapp.goBack();"><mat-icon>arrow_back</mat-icon>Back</button>
 
   <!-- This fills the remaining space of the current row -->
   <h1>{{webapp.getPageTitle()}}</h1>
 
 
-  <button mat-raised-button color="primary-light" *ngIf="webapp.getHomeButton();" (tap)="webapp.goHome();"><mat-icon>home</mat-icon> Home</button>
+  <button mat-raised-button color="primary-light" *ngIf="webapp.getHomeButton();" (click)="webapp.goHome();"><mat-icon>home</mat-icon> Home</button>
 </mat-toolbar>

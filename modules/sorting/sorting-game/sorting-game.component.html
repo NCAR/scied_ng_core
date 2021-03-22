@@ -21,7 +21,7 @@
         <p>Your score is {{sortingGameService.game.score}} points.</p>
     </div>
 
-    <button class="creditsButton" mat-raised-button draggable="false" onmousedown="return false" (tap)="sortingGameService.toggleCreditsModal()" *ngIf="sortingGameService.game.credits">Credits</button>
+    <button class="creditsButton" mat-raised-button draggable="false" onmousedown="return false" (click)="sortingGameService.toggleCreditsModal()" *ngIf="sortingGameService.game.credits">Credits</button>
   </div>
   <div class="column middle">
     <div class="dropzones" *ngFor="let zone of sortingGameService.game.dropzones | keyvalue">
@@ -69,7 +69,7 @@
     </div>
 
     <div class="levelbuttons">
-      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (tap)="changeLevel(item.key)">{{item.value.buttonTitle}}</button>
+      <button mat-raised-button draggable="false" onmousedown="return false" *ngFor="let item of data.levels | keyvalue" [ngClass]="{'active':item.key==level}" (click)="changeLevel(item.key)">{{item.value.buttonTitle}}</button>
     </div>
   </div>
   <audio id="{{item.value.id}}" preload="auto" *ngFor="let item of data.audio | keyvalue">
@@ -80,5 +80,5 @@
 
 <scied-modal *ngIf="data" [visible]="sortingGameService.showModal" [modaltitle]="sortingGameService.modal.title" [closable]="closable" (visibleChange)="onVisibleChange($event)">
   <div [innerHTML]="sortingGameService.modal.body"></div>
-  <button mat-raised-button color="primary" (tap)="sortingGameService.closeModal();" class="closeBtn">Close</button>
+  <button mat-raised-button color="primary" (click)="sortingGameService.closeModal();" class="closeBtn">Close</button>
 </scied-modal>

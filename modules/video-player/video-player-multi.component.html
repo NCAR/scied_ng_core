@@ -1,7 +1,7 @@
 <div class="flex-container" *ngIf="videos?.length > 0">
     <div class="menu">
       <h1>Videos</h1>
-      <mat-card [class.active]="item.id == id" (tap)="webapp.goToPage(item.content.url);" *ngFor="let item of videos">
+      <mat-card [class.active]="item.id == id" (click)="webapp.goToPage(item.content.url);" *ngFor="let item of videos">
         <mat-card-header>
           <img mat-card-avatar [src]="item.content.placeholder.image.thumb" [alt]="item.content.title">
           <mat-card-title>{{item.content.title}}</mat-card-title>

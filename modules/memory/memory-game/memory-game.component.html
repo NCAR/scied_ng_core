@@ -1,22 +1,22 @@
 <div class="row"  *ngIf="data && data.game" [class.exhibit]="resolution_exhibit" [class.web]="resolution_web">
   <div class="column" [class.left]="data.game.showButtons || data.game.showPairsText || data.game.showScore  || data.game.showContent" [class.tile_width_small]="tile_width_small" [class.tile_width_med]="tile_width_med" [class.tile_width_lg]="tile_width_lg" [class.tile_width_xlg]="tile_width_xlg">
     <div *ngIf="tiles" class="gameBoard">
-      <div memoryCard *ngFor="let tile of tiles" [tile]="tile" (tap)="memoryGameService.flip(tile)" class="card" [class.flipped]="tile.flipped"></div>
+      <div memoryCard *ngFor="let tile of tiles" [tile]="tile" (click)="memoryGameService.flip(tile)" class="card" [class.flipped]="tile.flipped"></div>
       <div class="complete" *ngIf="memoryGameService.game.unmatchedPairs == 0 && memoryGameService.game.showButtons && ((!data.game.showPairsText && !data.game.showScore && !data.game.showContent) || tile_width_xlg)">
         <h2>You Win</h2>
         <div class="menu" *ngIf="memoryGameService.game.showButtons">
-          <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (tap)="reloadData()" *ngIf="memoryGameService.game.restartButtonText">{{memoryGameService.game.restartButtonText}}</button>
-          <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (tap)="webapp.goToPage(baseUrl)" *ngIf="memoryGameService.game.chooseLevelButtonText">{{memoryGameService.game.chooseLevelButtonText}}</button>
-          <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (tap)="memoryGameService.toggleAudio()" *ngIf="memoryGameService.game.audioButtonText">{{memoryGameService.game.audioButtonText}}</button>
+          <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (click)="reloadData()" *ngIf="memoryGameService.game.restartButtonText">{{memoryGameService.game.restartButtonText}}</button>
+          <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (click)="webapp.goToPage(baseUrl)" *ngIf="memoryGameService.game.chooseLevelButtonText">{{memoryGameService.game.chooseLevelButtonText}}</button>
+          <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (click)="memoryGameService.toggleAudio()" *ngIf="memoryGameService.game.audioButtonText">{{memoryGameService.game.audioButtonText}}</button>
         </div>
       </div>
     </div>
   </div>
   <div class="column right" *ngIf="data.game.showButtons || data.game.showPairsText || data.game.showScore  || data.game.showContent" [class.tile_width_small]="tile_width_small" [class.tile_width_med]="tile_width_med" [class.tile_width_lg]="tile_width_lg" [class.tile_width_xlg]="tile_width_xlg" [class.content_two_rows]="data.game.showPairsText || data.game.showScore">
     <div class="menu" *ngIf="memoryGameService.game && memoryGameService.game.showButtons">
-      <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (tap)="reloadData()" *ngIf="memoryGameService.game.restartButtonText">{{memoryGameService.game.restartButtonText}}</button>
-      <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (tap)="webapp.goToPage(baseUrl)" *ngIf="memoryGameService.game.chooseLevelButtonText">{{memoryGameService.game.chooseLevelButtonText}}</button>
-      <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (tap)="memoryGameService.toggleAudio()" *ngIf="memoryGameService.game.audioButtonText">{{memoryGameService.game.audioButtonText}}</button>
+      <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (click)="reloadData()" *ngIf="memoryGameService.game.restartButtonText">{{memoryGameService.game.restartButtonText}}</button>
+      <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (click)="webapp.goToPage(baseUrl)" *ngIf="memoryGameService.game.chooseLevelButtonText">{{memoryGameService.game.chooseLevelButtonText}}</button>
+      <button mat-raised-button class="gameButton" draggable="false" onmousedown="return false" (click)="memoryGameService.toggleAudio()" *ngIf="memoryGameService.game.audioButtonText">{{memoryGameService.game.audioButtonText}}</button>
     </div>
     <div class="game_status_container" *ngIf="data.game.showPairsText || data.game.showScore">
       <h2 *ngIf="data.game.showPairsText" class="pairs_text">Pairs left to match: {{memoryGameService.game.unmatchedPairs}}</h2>
