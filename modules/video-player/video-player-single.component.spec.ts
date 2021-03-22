@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { VgOverlayPlayModule } from 'videogular2/overlay-play';
-import { VgCoreModule } from 'videogular2/core';
-import { VgBufferingModule } from 'videogular2/buffering';
-import { VgControlsModule } from 'videogular2/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { RouterTestingModule } from '@angular/router/testing';
 import { WebappService } from '../../services/webapp/webapp.service';
 import { MockWebappService } from '../../services/webapp/webapp.service.mock';
